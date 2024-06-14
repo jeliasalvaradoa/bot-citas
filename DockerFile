@@ -1,22 +1,7 @@
-FROM node:14
-
-# Crear directorio de la aplicación
-WORKDIR /usr/src/app
-
-# Instalar dependencias del sistema para sharp
-RUN apt-get update && \
-    apt-get install -y \
-    libvips-dev
-
-# Copiar archivos de la aplicación
+FROM node:20
+WORKDIR /app
 COPY package*.json ./
+RUN npm i
 COPY . .
-
-# Instalar dependencias
-RUN npm install
-
-# Exponer puerto
-EXPOSE 8080
-
-# Comando para iniciar la aplicación
+ARG PORT
 CMD ["npm", "start"]
