@@ -17,6 +17,7 @@
     "@builderbot-plugins/telegram": "0.2.13-alpha.0",
     "date-fns": "^3.3.1",
     "dotenv": "^16.4.2",
+    "esbuild": "^0.21.5",
     "openai": "^4.27.0",
     "sharp": "^0.33.4"
   },
@@ -25,4 +26,4 @@
     "tsm": "^2.3.0",
     "tsx": "^4.7.1"
   }
-  }
+}
