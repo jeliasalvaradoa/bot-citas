@@ -25,14 +25,14 @@ class AIClass {
     createChat = async (
         messages: ChatCompletionMessageParam[],
         model?: string,
-        temperature = 0
+        temperature = 1
     ) => {
         try {
             const completion = await this.openai.chat.completions.create({
                 model: model ?? this.model,
                 messages,
                 temperature,
-                max_tokens: 326,
+                max_tokens: 256,
                 top_p: 0,
                 frequency_penalty: 0,
                 presence_penalty: 0,
