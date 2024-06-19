@@ -5,7 +5,7 @@ import { BaileysProvider } from '@bot-whatsapp/provider-baileys'
 
 import AIClass from './services/ai';
 import flows from './flows';
-
+import   portal_http from '@bot-whatsapp/portal'
 const ai = new AIClass(process.env.OPEN_API_KEY, 'gpt-3.5-turbo-16k')
 
 const main = async () => {
@@ -20,5 +20,5 @@ const main = async () => {
     }, { extensions: { ai } })
 
 }
-
+portal_http()
 main()
