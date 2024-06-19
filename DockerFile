@@ -19,7 +19,8 @@ COPY . .
 RUN node build.cjs
 
 # Expone el puerto que utiliza la aplicación (ajústalo según sea necesario)
-EXPOSE 3000
+ARG OPEN_API_KEY
+ARG PORT
 
 # Comando para ejecutar la aplicación
 CMD ["pnpm", "start"]
