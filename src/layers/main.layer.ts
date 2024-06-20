@@ -12,17 +12,12 @@ export default async (_: BotContext, { state, gotoFlow, extensions }: BotMethods
     const ai = extensions.ai as AIClass
     const history = getHistoryParse(state)
     const prompt = `Como una inteligencia artificial avanzada, tu tarea es analizar el contexto de una conversación y determinar cuál de las siguientes acciones es más apropiada para realizar:
-    --------------------------------------------------------
-    Historial de conversación:
-    {HISTORY}
-    
-    Posibles acciones a realizar:
-    1. AGENDAR: Esta acción se debe realizar cuando el cliente expresa su deseo de programar una cita.
-    2. HABLAR: Esta acción se debe realizar cuando el cliente desea hacer una pregunta o necesita más información.
-    3. CONFIRMAR: Esta acción se debe realizar cuando el cliente y el vendedor llegaron a un acuerdo mutuo proporcionando una fecha, dia y hora exacta sin conflictos de hora.
-    -----------------------------
+    Historial: {HISTORY}
+    Acciones a realizar:
+    1. AGENDAR: Cliente expresa deseo de programar una cita.
+    2. HABLAR: Cliente desea hacer una pregunta o necesita más información.
+    3. CONFIRMAR: Cuando cliente y vendedor llegaron a un acuerdo mutuo proporcionando una fecha, dia y hora exacta sin conflictos de hora.
     Tu objetivo es comprender la intención del cliente y seleccionar la acción más adecuada en respuesta a su declaración.
-    
     Respuesta ideal (AGENDAR|HABLAR|CONFIRMAR):`.replace('{HISTORY}', history)
 
     const text = await ai.createChat([
